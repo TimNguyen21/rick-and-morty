@@ -5,6 +5,12 @@ import { setCurrentCharactersInfo } from '../../actions';
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
 
 class CharacterDetails extends Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     currentCharacterInfo: {}
+  //   }
+  // }
 
   componentDidMount = () => {
     const characterId = parseInt(this.props.match);
@@ -14,6 +20,7 @@ class CharacterDetails extends Component {
   updateCurrentCharacterInfo = (id) => {
     getCharacterInfo(id)
       .then(data => this.props.setCharactersInfo(data))
+      // .then(data => this.setState({currentCharacterInfo: data}))
       .catch(err => console.log(err.message))
   }
 
@@ -21,12 +28,19 @@ class CharacterDetails extends Component {
     const { id, name, status, species, gender, origin, location, image } = this.props.currentCharacterInfo;
 
     return (
-      <section>
-      <div>Name: {name}</div>
-      <div>Status: {status}</div>
-      <div>Species: {species}</div>
-      <div>Gender: {gender}</div>
-      <div>{image}</div>
+      <section className="character-details">
+        <section>
+          <img src={image} alt={"image of " + name}/>
+        </section>
+        <section>
+          <h1>{name}</h1>
+          <section>
+            <div>Status: {status}</div>
+            <div>Species: {species}</div>
+            <div>Gender: {gender}</div>
+          </section>
+          <button>Add to Favorite</button>
+        </section>
       </section>
     )
   }

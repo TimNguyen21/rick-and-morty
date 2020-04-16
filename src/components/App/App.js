@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   characterCount = () => {
-    let characterCount = [...Array(21).keys()].slice(1)
+    let characterCount = [...Array(21).keys()].slice(1);
 
     characterCount.forEach(character => {
       getCharacterInfo(character)

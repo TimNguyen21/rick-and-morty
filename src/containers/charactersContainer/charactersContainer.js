@@ -20,8 +20,11 @@ class CharactersContainer extends Component {
 
   render() {
     return (
-      <section className='characters-container'>
+      <section>
+      <h1>Characters</h1>
+        <section className='characters-container'>
         {this.createCharactersList()}
+        </section>
       </section>
     )
   }
