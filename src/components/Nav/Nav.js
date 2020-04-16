@@ -9,7 +9,9 @@ const Nav = () => {
       <Link to={`/`}>
         <button>Home</button>
       </Link>
-      <button>View Favorites</button>
+      <Link to={`/favorites`}>
+        <button>View Favorites</button>
+      </Link>
     </section>
   )
 }
