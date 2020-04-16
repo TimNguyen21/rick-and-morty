@@ -1,4 +1,4 @@
-export const getCharactersInfo = (charactersInfo) => ({
+export const getCharactersInfo = (characterInfo) => ({
   type: "GET_CHARACTERS_INFO",
-  charactersInfo
+  characterInfo
 })
