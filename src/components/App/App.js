@@ -40,11 +40,11 @@ class App extends Component {
           <Route
             exact
             path='/character/:id'
-            render={({ match }) => (
-              <CharacterDetails
+            render={({ match }) => {
+              return <CharacterDetails
                 match={match.params.id}
               />
-            )}
+            }}
           />
           <Route
             path='*'
