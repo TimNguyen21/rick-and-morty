@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './CharacterCard.scss'
 
 class CharacterCard extends Component {
@@ -10,9 +11,10 @@ class CharacterCard extends Component {
     const { id, img, name} = this.props
     return (
       <article className='character-card'>
-        <img src={img} alt={"image of " + name}/>
-        <div>{name}</div>
-        <button>More Details</button>
+        <Link to={`/character/${id}`}>
+          <img src={img} alt={"image of " + name}/>
+          <div>{name}</div>
+        </Link>
       </article>
     )
   }

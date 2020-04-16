@@ -9,10 +9,10 @@ class CharactersContainer extends Component {
     return this.props.charactersList.map(character => {
       return (
         <CharacterCard
-        id={character.id}
-        key={character.id}
-        img={character.image}
-        name={character.name}
+          id={character.id}
+          key={character.id}
+          img={character.image}
+          name={character.name}
         />
       )
     })
@@ -20,8 +20,11 @@ class CharactersContainer extends Component {
 
   render() {
     return (
-      <section className='characters-container'>
+      <section>
+      <h1>Characters</h1>
+        <section className='characters-container'>
         {this.createCharactersList()}
+        </section>
       </section>
     )
   }

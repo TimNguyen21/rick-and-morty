@@ -1,11 +1,14 @@
 import React from 'react';
-import "./Nav.scss"
+import { Link } from 'react-router-dom';
+import "./Nav.scss";
 
 const Nav = () => {
 
   return(
     <section className="nav-section">
-      <button>Home</button>
+      <Link to={`/`}>
+        <button>Home</button>
+      </Link>
       <button>View Favorites</button>
     </section>
   )
