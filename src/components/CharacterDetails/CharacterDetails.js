@@ -5,12 +5,6 @@ import { setCurrentCharactersInfo } from '../../actions';
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
 
 class CharacterDetails extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     currentCharacterInfo: {}
-  //   }
-  // }
 
   componentDidMount = () => {
     const characterId = parseInt(this.props.match);
@@ -20,8 +14,15 @@ class CharacterDetails extends Component {
   updateCurrentCharacterInfo = (id) => {
     getCharacterInfo(id)
       .then(data => this.props.setCharactersInfo(data))
-      // .then(data => this.setState({currentCharacterInfo: data}))
       .catch(err => console.log(err.message))
+  }
+
+  nameCheck = (type) => {
+    if(type === undefined) {
+      return ''
+    } else {
+      return type["name"]
+    }
   }
 
   render() {
@@ -38,6 +39,8 @@ class CharacterDetails extends Component {
             <div>Status: {status}</div>
             <div>Species: {species}</div>
             <div>Gender: {gender}</div>
+            <div>Origin: {this.nameCheck(origin)}</div>
+            <div>Location: {this.nameCheck(location)}</div>
           </section>
           <button>Add to Favorite</button>
         </section>
