@@ -9,10 +9,10 @@ class CharactersContainer extends Component {
     return this.props.charactersList.map(character => {
       return (
         <CharacterCard
-        id={character.id}
-        key={character.id}
-        img={character.image}
-        name={character.name}
+          id={character.id}
+          key={character.id}
+          img={character.image}
+          name={character.name}
         />
       )
     })

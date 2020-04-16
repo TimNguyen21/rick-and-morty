@@ -5,6 +5,7 @@ import './App.scss';
 import {Route, Switch } from 'react-router-dom';
 import Nav from '../Nav/Nav'
 import CharactersContainer from '../../containers/charactersContainer/charactersContainer'
+import CharacterDetails from '../CharacterDetails/CharacterDetails'
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
 
 class App extends Component {
@@ -28,7 +29,28 @@ class App extends Component {
       <main>
         <header>The Rick and Morty Database</header>
         <Nav />
-        <CharactersContainer />
+        <Switch>
+          <Route
+            exact
+            path='/'
+            render={() => (
+              <CharactersContainer />
+            )}
+          />
+          <Route
+            exact
+            path='/character/:id'
+            render={({ match }) => (
+              <CharacterDetails
+                match={match.params.id}
+              />
+            )}
+          />
+          <Route
+            path='*'
+            component={CharactersContainer}
+          />
+          </Switch>
       </main>
     )
   }

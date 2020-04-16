@@ -4,9 +4,11 @@ import './CharacterDetails.scss'
 class CharacterDetails extends Component {
 
   render() {
+    const number = this.props.match
+
     return (
       <section>
-        character details
+        {number}
       </section>
     )
   }
