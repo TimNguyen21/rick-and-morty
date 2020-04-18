@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import './CharacterDetails.scss'
 import { connect } from 'react-redux';
-import { setCurrentCharactersInfo } from '../../actions';
+import { setCurrentCharactersInfo, addFavorite } from '../../actions';
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
 
 class CharacterDetails extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     currentCharacterInfo: {}
-  //   }
-  // }
 
   componentDidMount = () => {
     const characterId = parseInt(this.props.match);
@@ -20,8 +14,25 @@ class CharacterDetails extends Component {
   updateCurrentCharacterInfo = (id) => {
     getCharacterInfo(id)
       .then(data => this.props.setCharactersInfo(data))
-      // .then(data => this.setState({currentCharacterInfo: data}))
       .catch(err => console.log(err.message))
+  }
+
+  nameCheck = (type) => {
+    if(type === undefined) {
+      return ''
+    } else {
+      return type["name"]
+    }
+  }
+
+  addFavorite = () => {
+    const characterID = this.props.currentCharacterInfo.id
+    const favoriteCheck = this.props.favorites.find(character => character.id == characterID);
+    if(!favoriteCheck) {
+      this.props.addToFavorites(characterID)
+    } else {
+      console.log("saved already")
+    }
   }
 
   render() {
@@ -38,8 +49,10 @@ class CharacterDetails extends Component {
             <div>Status: {status}</div>
             <div>Species: {species}</div>
             <div>Gender: {gender}</div>
+            <div>Origin: {this.nameCheck(origin)}</div>
+            <div>Location: {this.nameCheck(location)}</div>
           </section>
-          <button>Add to Favorite</button>
+          <button onClick={this.addFavorite}>Add to Favorite</button>
         </section>
       </section>
     )
@@ -47,11 +60,14 @@ class CharacterDetails extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  currentCharacterInfo: state.currentCharacter
+  charactersInfo: state.charactersInfo,
+  currentCharacterInfo: state.currentCharacter,
+  favorites: state.favorites
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  setCharactersInfo: charactersInfo => dispatch( setCurrentCharactersInfo(charactersInfo) )
+  setCharactersInfo: charactersInfo => dispatch( setCurrentCharactersInfo(charactersInfo) ),
+  addToFavorites: id => dispatch( addFavorite(id) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps) (CharacterDetails);

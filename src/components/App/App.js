@@ -5,6 +5,7 @@ import './App.scss';
 import {Route, Switch } from 'react-router-dom';
 import Nav from '../Nav/Nav'
 import CharactersContainer from '../../containers/charactersContainer/charactersContainer'
+import FavoritesContainer from '../../containers/favoritesContainer/favoritesContainer'
 import CharacterDetails from '../CharacterDetails/CharacterDetails'
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
 
@@ -38,7 +39,12 @@ class App extends Component {
             )}
           />
           <Route
-            exact
+            path='/favorites'
+            render={() => (
+              <FavoritesContainer />
+            )}
+          />
+          <Route
             path='/character/:id'
             render={({ match }) => {
               return <CharacterDetails
@@ -50,7 +56,7 @@ class App extends Component {
             path='*'
             component={CharactersContainer}
           />
-          </Switch>
+        </Switch>
       </main>
     )
   }
