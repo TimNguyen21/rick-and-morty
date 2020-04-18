@@ -1,5 +1,8 @@
-.search-section, .filter-status {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.query-section {
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+  }
 }
