@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CharacterCard from '../../components/CharacterCard/CharacterCard'
+import Query from '../../components/Query/Query'
 import { connect } from 'react-redux';
 import './charactersContainer.scss'
 
@@ -20,10 +21,15 @@ class CharactersContainer extends Component {
 
   render() {
     return (
-      <section>
-      <h1>Characters</h1>
-        <section className='characters-container'>
-        {this.createCharactersList()}
+      <section className="main-page">
+        <section>
+          <Query />
+        </section>
+        <section>
+        <h1>Characters</h1>
+          <section className='characters-container'>
+          {this.createCharactersList()}
+          </section>
         </section>
       </section>
     )

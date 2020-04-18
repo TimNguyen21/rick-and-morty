@@ -3,3 +3,16 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
 }
+
+.main-page {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  section:first-child {
+    border: 1px solid black;
+  }
+  section:nth-child(2) {
+    h1 {
+      text-align: center;
+    }
+  }
+}
