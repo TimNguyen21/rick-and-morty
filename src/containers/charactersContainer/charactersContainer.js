@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import CharacterCard from '../../components/CharacterCard/CharacterCard'
+import Query from '../../components/Query/Query'
 import { connect } from 'react-redux';
 import './charactersContainer.scss'
+import { updateQuery } from '../../actions'
 
 class CharactersContainer extends Component {
 
   createCharactersList = () => {
-    return this.props.charactersList.map(character => {
+    return this.props.currentQuery.map(character => {
       return (
         <CharacterCard
-          id={character.id}
-          key={character.id}
-          img={character.image}
-          name={character.name}
+        id={character.id}
+        key={character.id}
+        img={character.image}
+        name={character.name}
         />
       )
     })
@@ -20,10 +22,15 @@ class CharactersContainer extends Component {
 
   render() {
     return (
-      <section>
-      <h1>Characters</h1>
-        <section className='characters-container'>
-        {this.createCharactersList()}
+      <section className="main-page">
+        <section>
+          <Query />
+        </section>
+        <section>
+        <h1>Characters</h1>
+          <section className='characters-container'>
+          {this.createCharactersList()}
+          </section>
         </section>
       </section>
     )
@@ -31,7 +38,12 @@ class CharactersContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  charactersList: state.charactersInfo
+  charactersList: state.charactersInfo,
+  currentQuery: state.currentQuery
 })
 
-export default connect(mapStateToProps, null)(CharactersContainer);
+const mapDispatchToProps = (dispatch) => ({
+  updateQuery: characters => dispatch( updateQuery(characters) )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CharactersContainer);

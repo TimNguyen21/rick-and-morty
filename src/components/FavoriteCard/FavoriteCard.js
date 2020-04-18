@@ -17,7 +17,7 @@ class FavoriteCard extends Component {
     return (
       <article className="favorite-card">
         <section>
-          <img src={image} />
+          <img src={image} alt={"image of " + name}/>
           <h1>{name}</h1>
         </section>
         <section>

@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { updateQuery } from '../../actions'
 import "./Nav.scss";
 
-const Nav = () => {
+class Nav extends Component {
 
-  return(
-    <section className="nav-section">
-      <Link to={`/`}>
-        <button>Home</button>
-      </Link>
-      <Link to={`/favorites`}>
-        <button>View Favorites</button>
-      </Link>
-    </section>
-  )
+  resetQuery = () => {
+    this.props.updateQuery(this.props.charactersList)
+  }
+
+  render() {
+    return(
+      <section className="nav-section">
+        <Link to={`/`}>
+          <button onClick={this.resetQuery}>Home</button>
+        </Link>
+        <Link to={`/favorites`}>
+          <button>View Favorites</button>
+        </Link>
+      </section>
+    )
+  }
 }
 
-export default Nav;
+const mapStateToProps = (state) => ({
+  charactersList: state.charactersInfo,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  updateQuery: characters => dispatch( updateQuery(characters) )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

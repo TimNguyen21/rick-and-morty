@@ -17,3 +17,8 @@ export const removeFavorite = (id) => ({
   type: 'REMOVE_FAVORITES',
   id
 })
+
+export const updateQuery = (characters) => ({
+  type: "UPDATE_QUERY",
+  characters
+})
