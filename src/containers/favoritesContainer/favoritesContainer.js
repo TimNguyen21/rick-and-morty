@@ -5,11 +5,42 @@ import './favoritesContainer.scss'
 
 class FavoritesContainer extends Component {
 
+  createFavoritesList = () => {
+    return this.props.favorites.map(favorite => {
+      const characterInfo = this.props.charactersInfo.find(character => character.id === favorite.id)
+
+      return (
+          <FavoriteCard
+            key={characterInfo.id}
+            id={characterInfo.id}
+            name={characterInfo.name}
+            image={characterInfo.image}
+          />
+        )
+      }
+    )
+  }
+
+  // checkFavorite = () => {
+  //   if (this.props.favorites) {
+  //     return (<h1>no favorites</h1>)
+  //   } else {
+  //     this.createFavoritesList()
+  //   }
+  // }
+
   render() {
     return(
-      <div>favs</div>
+      <article>
+        {this.createFavoritesList()}
+      </article>
     )
   }
 }
 
-export default FavoritesContainer;
+const mapStateToProps = (state) => ({
+  charactersInfo: state.charactersInfo,
+  favorites: state.favorites
+})
+
+export default connect(mapStateToProps, null)(FavoritesContainer);
