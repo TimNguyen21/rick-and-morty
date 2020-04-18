@@ -1,0 +1,21 @@
+.favorite-card {
+  display: flex;
+  border: 1px solid black;
+  height: auto;
+  width: auto;
+  margin: 2em;
+  padding: 1em 1em 0em 1em;
+  section:first-child {
+    img {
+      width: 100%
+    }
+  }
+  section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width:100%;
+    margin: 5em 0em 5em 3em;
+  }
+}

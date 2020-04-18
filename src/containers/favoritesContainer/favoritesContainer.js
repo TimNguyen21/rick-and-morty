@@ -31,9 +31,9 @@ class FavoritesContainer extends Component {
 
   render() {
     return(
-      <article>
+      <section className="favorites-container">
         {this.createFavoritesList()}
-      </article>
+      </section>
     )
   }
 }
