@@ -21,6 +21,7 @@ class Query extends Component {
     const searchWord = this.state.searchWord.toLowerCase()
     const characterQueryResults = this.props.charactersList.filter(character => character.name.toLowerCase().includes(searchWord))
     this.props.updateQuery(characterQueryResults)
+    this.setState({searchWord: ''})
   }
 
   filterStatus = () => {
@@ -80,8 +81,17 @@ class Query extends Component {
         <label for="filter-species">Filter Species:</label>
         <select name="species" value={this.state.species} onChange={this.updateState} required>
           <option value="0">--Select a Species--</option>
-          <option value="Human">"Human"</option>
           <option value="Alien">"Alien"</option>
+          <option value="Animal">"Animal"</option>
+          <option value="Cronenberg">"Cronenberg"</option>
+          <option value="Disease">"Disease"</option>
+          <option value="Human">"Human"</option>
+          <option value="Humanoid">"Humanoid"</option>
+          <option value="Mytholog">"Mytholog"</option>
+          <option value="Parasite">"Parasite"</option>
+          <option value="Poopybutthole">"Poopybutthole"</option>
+          <option value="Robot">"Robot"</option>
+          <option value="Vampire">"Vampire"</option>
           <option value="Unknown">"Unknown"</option>
         </select>
         <button className="filter-species-button" type="submit" onClick={this.filterSpecies} disabled={this.state.species === 0}>Filter Species</button>
