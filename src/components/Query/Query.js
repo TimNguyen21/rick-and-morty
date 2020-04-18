@@ -8,17 +8,24 @@ class Query extends Component {
     super();
     this.state = {
       searchWord: '',
+      status: 0,
     }
   }
 
-  updateSearch = (event) => {
-    this.setState({searchWord: event.target.value})
+  updateState = (event) => {
+    this.setState({[event.target.name]: event.target.value})
   }
 
   findCharacters = () => {
     const searchWord = this.state.searchWord.toLowerCase()
     const characterQueryResults = this.props.charactersList.filter(character => character.name.toLowerCase().includes(searchWord))
     this.props.updateQuery(characterQueryResults)
+  }
+
+  filterStatus = () => {
+    const currentStatus = this.state.status.toLowerCase()
+    const filterStatus = this.props.charactersList.filter(character => character.status.toLowerCase() === currentStatus)
+    this.props.updateQuery(filterStatus)
   }
 
   resetQuery = () => {
@@ -29,15 +36,27 @@ class Query extends Component {
     return (
       <section>
         <section className="search-section">
-          <label>Search Character:</label>
+          <label for="search-characters">Search Character:</label>
           <input
             name='searchWord'
             placeholder='Enter Character Name'
-            onChange={this.updateSearch}
+            onChange={this.updateState}
             value={this.state.searchWord}
           />
-          <button onClick={this.findCharacters}>Search</button>
-          <button onClick={this.resetQuery}>Reset</button>
+          <button onClick={this.findCharacters} disabled={this.state.searchWord === ''}>Search</button>
+        </section>
+        <section className="filter-status">
+          <label for="filter-status">Filter Status:</label>
+          <select name="status" value={this.state.status} onChange={this.updateState} required>
+            <option value="0">--Select a Status--</option>
+            <option value="alive">"Alive"</option>
+            <option value="dead">"Dead"</option>
+            <option value="unknown">"Unknown"</option>
+          </select>
+          <button className="filter-status-button" type="submit" onClick={this.filterStatus} disabled={this.state.status === 0}>Filter Status</button>
+        </section>
+        <section>
+          <button onClick={this.resetQuery}>Reset Query</button>
         </section>
       </section>
     )
