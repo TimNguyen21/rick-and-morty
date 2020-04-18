@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Query.scss'
+import { connect } from 'react-redux';
+import { updateQuery } from '../../actions'
 
 class Query extends Component {
   constructor() {
@@ -13,6 +15,16 @@ class Query extends Component {
     this.setState({searchWord: event.target.value})
   }
 
+  findCharacters = () => {
+    const searchWord = this.state.searchWord.toLowerCase()
+    const characterQueryResults = this.props.charactersList.filter(character => character.name.toLowerCase().includes(searchWord))
+    this.props.updateQuery(characterQueryResults)
+  }
+
+  resetQuery = () => {
+    this.props.updateQuery(this.props.charactersList)
+  }
+
   render() {
     return (
       <section>
@@ -24,11 +36,20 @@ class Query extends Component {
             onChange={this.updateSearch}
             value={this.state.searchWord}
           />
-          <button>Search</button>
+          <button onClick={this.findCharacters}>Search</button>
+          <button onClick={this.resetQuery}>Reset</button>
         </section>
       </section>
     )
   }
 }
 
-export default Query;
+const mapStateToProps = (state) => ({
+  charactersList: state.charactersInfo,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  updateQuery: characters => dispatch( updateQuery(characters) )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Query);

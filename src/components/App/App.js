@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getCharactersInfo } from '../../actions'
+import { getCharactersInfo, updateQuery } from '../../actions'
 import './App.scss';
 import {Route, Switch } from 'react-router-dom';
 import Nav from '../Nav/Nav'
@@ -12,17 +12,23 @@ import { getCharacterInfo } from '../../apiCalls/apiCalls'
 class App extends Component {
 
   componentDidMount = () => {
-    this.characterCount()
+    this.characterListings();
   }
 
-  characterCount = () => {
+  characterListings = () => {
     let characterCount = [...Array(21).keys()].slice(1);
+    let characterList = []
 
     characterCount.forEach(character => {
       getCharacterInfo(character)
-        .then(data => this.props.getCharactersInfo(data))
+        .then(data => {
+          this.props.getCharactersInfo(data);
+          characterList.push(data)
+        })
         .catch(err => console.log(err.message))
     })
+
+    this.props.updateQuery(characterList)
   }
 
   render() {
@@ -62,8 +68,13 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  charactersList: state.charactersInfo,
+})
+
 const mapDispatchToProps = (dispatch) => ({
-  getCharactersInfo: charactersInfo => dispatch( getCharactersInfo(charactersInfo) )
+  getCharactersInfo: charactersInfo => dispatch( getCharactersInfo(charactersInfo) ),
+  updateQuery: characters => dispatch( updateQuery(characters) )
 })
 
 export default connect(null, mapDispatchToProps)(App);
