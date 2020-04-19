@@ -6,28 +6,25 @@ import './favoritesContainer.scss'
 class FavoritesContainer extends Component {
 
   createFavoritesList = () => {
+    const checkFavorites = this.props.favorites;
+    
+    return checkFavorites.length === 0 ? (<h1>There are no favorites!</h1>) : this.favoritesList()
+  }
+
+  favoritesList = () => {
     return this.props.favorites.map(favorite => {
       const characterInfo = this.props.charactersInfo.find(character => character.id === favorite.id)
 
       return (
-          <FavoriteCard
-            key={characterInfo.id}
-            id={characterInfo.id}
-            name={characterInfo.name}
-            image={characterInfo.image}
-          />
-        )
-      }
-    )
+        <FavoriteCard
+        key={characterInfo.id}
+        id={characterInfo.id}
+        name={characterInfo.name}
+        image={characterInfo.image}
+        />
+      )
+    })
   }
-
-  // checkFavorite = () => {
-  //   if (this.props.favorites) {
-  //     return (<h1>no favorites</h1>)
-  //   } else {
-  //     this.createFavoritesList()
-  //   }
-  // }
 
   render() {
     return(

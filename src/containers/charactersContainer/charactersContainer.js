@@ -8,6 +8,25 @@ import { updateQuery } from '../../actions'
 class CharactersContainer extends Component {
 
   createCharactersList = () => {
+    const currentQuery = this.props.currentQuery;
+    return currentQuery.length === 0 ?
+      (this.noResultsMessage()) : this.updateQueryList();
+  }
+
+  resetSearch = () => {
+    this.props.updateQuery(this.props.charactersList)
+  }
+
+  noResultsMessage = () => {
+    return (
+      <section>
+        <h1>There are no results</h1>
+        <button onClick={this.resetSearch}>Reset Search</button>
+      </section>
+    )
+  }
+
+  updateQueryList = () => {
     return this.props.currentQuery.map(character => {
       return (
         <CharacterCard

@@ -3,6 +3,7 @@ import './CharacterDetails.scss'
 import { connect } from 'react-redux';
 import { setCurrentCharactersInfo, addFavorite } from '../../actions';
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
+import CharacterLocationContainer from '../../containers/characterLocationContainer/characterLocationContainer'
 
 class CharacterDetails extends Component {
 
@@ -18,41 +19,52 @@ class CharacterDetails extends Component {
   }
 
   nameCheck = (type) => {
-    if(type === undefined) {
-      return ''
-    } else {
-      return type["name"]
-    }
+    return type === undefined ? "" : type["name"]
   }
 
   addFavorite = () => {
     const characterID = this.props.currentCharacterInfo.id
-    const favoriteCheck = this.props.favorites.find(character => character.id == characterID);
-    if(!favoriteCheck) {
-      this.props.addToFavorites(characterID)
-    } else {
-      console.log("saved already")
-    }
+    this.props.addToFavorites(characterID)
+  }
+
+  toggleFavoriteButton = () => {
+    const characterID = this.props.currentCharacterInfo.id
+    const favoriteCheck = this.props.favorites.find(character => character.id === characterID);
+
+    return !favoriteCheck ? false : true
+  }
+
+  toggleFavoriteButtonStatus = () => {
+    const characterID = this.props.currentCharacterInfo.id
+    const favoriteCheck = this.props.favorites.find(character => character.id === characterID);
+
+    return !favoriteCheck ? "Add to Favorites" : "Already Favorited!"
   }
 
   render() {
-    const { id, name, status, species, gender, origin, location, image } = this.props.currentCharacterInfo;
+    const { name, status, species, gender, origin, location, image } = this.props.currentCharacterInfo;
 
     return (
-      <section className="character-details">
-        <section>
-          <img src={image} alt={"image of " + name}/>
+      <section>
+        <section className="character-details">
+          <section>
+            <img src={image} alt={"image of " + name}/>
+          </section>
+          <section>
+            <h1>{name}</h1>
+            <section>
+              <div>Status: {status}</div>
+              <div>Species: {species}</div>
+              <div>Gender: {gender}</div>
+              <div>Origin: {this.nameCheck(origin)}</div>
+              <div>Location: {this.nameCheck(location)}</div>
+            </section>
+            <button onClick={this.addFavorite} disabled={this.toggleFavoriteButton()}>{this.toggleFavoriteButtonStatus()}</button>
+          </section>
         </section>
         <section>
-          <h1>{name}</h1>
-          <section>
-            <div>Status: {status}</div>
-            <div>Species: {species}</div>
-            <div>Gender: {gender}</div>
-            <div>Origin: {this.nameCheck(origin)}</div>
-            <div>Location: {this.nameCheck(location)}</div>
-          </section>
-          <button onClick={this.addFavorite}>Add to Favorite</button>
+          <h2>Characters from the: "{this.nameCheck(location)}"</h2>
+          <div><CharacterLocationContainer /></div>
         </section>
       </section>
     )
