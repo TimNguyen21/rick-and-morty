@@ -24,7 +24,6 @@ class CharacterDetails extends Component {
 
   addFavorite = () => {
     const characterID = this.props.currentCharacterInfo.id
-    const favoriteCheck = this.props.favorites.find(character => character.id === characterID);
     this.props.addToFavorites(characterID)
   }
 
