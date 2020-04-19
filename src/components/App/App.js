@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav'
 import CharactersContainer from '../../containers/charactersContainer/charactersContainer'
 import FavoritesContainer from '../../containers/favoritesContainer/favoritesContainer'
 import CharacterDetails from '../CharacterDetails/CharacterDetails'
+import BadRoute from '../404Page/404Page'
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
 
 class App extends Component {
@@ -38,6 +39,20 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route
+          path='/character/:id'
+          render={({ match }) => {
+            return <CharacterDetails
+            match={match.params.id}
+            />
+          }}
+          />
+          <Route
+          path='/favorites'
+          render={() => (
+            <FavoritesContainer />
+          )}
+          />
+          <Route
             exact
             path='/'
             render={() => (
@@ -45,22 +60,8 @@ class App extends Component {
             )}
           />
           <Route
-            path='/favorites'
-            render={() => (
-              <FavoritesContainer />
-            )}
-          />
-          <Route
-            path='/character/:id'
-            render={({ match }) => {
-              return <CharacterDetails
-                match={match.params.id}
-              />
-            }}
-          />
-          <Route
             path='*'
-            component={CharactersContainer}
+            component={BadRoute}
           />
         </Switch>
       </main>
