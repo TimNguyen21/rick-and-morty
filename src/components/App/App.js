@@ -68,10 +68,6 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  charactersList: state.charactersInfo,
-})
-
 const mapDispatchToProps = (dispatch) => ({
   getCharactersInfo: charactersInfo => dispatch( getCharactersInfo(charactersInfo) ),
   updateQuery: characters => dispatch( updateQuery(characters) )

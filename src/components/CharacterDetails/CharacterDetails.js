@@ -28,7 +28,7 @@ class CharacterDetails extends Component {
 
   addFavorite = () => {
     const characterID = this.props.currentCharacterInfo.id
-    const favoriteCheck = this.props.favorites.find(character => character.id == characterID);
+    const favoriteCheck = this.props.favorites.find(character => character.id === characterID);
     if(!favoriteCheck) {
       this.props.addToFavorites(characterID)
     } else {
@@ -37,7 +37,7 @@ class CharacterDetails extends Component {
   }
 
   render() {
-    const { id, name, status, species, gender, origin, location, image } = this.props.currentCharacterInfo;
+    const { name, status, species, gender, origin, location, image } = this.props.currentCharacterInfo;
 
     return (
       <section>

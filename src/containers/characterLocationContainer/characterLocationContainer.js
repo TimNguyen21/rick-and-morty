@@ -3,7 +3,6 @@ import CharacterLocationCard from '../../components/CharacterLocationCard/Charac
 import { connect } from 'react-redux';
 import './characterLocationContainer.scss'
 import { updateLocationResidents } from '../../actions'
-import { getCharacterInfo } from '../../apiCalls/apiCalls'
 
 class CharacterLocationContainer extends Component {
 
@@ -16,7 +15,11 @@ class CharacterLocationContainer extends Component {
 
       return(
         charactersMatchingLocations.map(character => {
-          return <CharacterLocationCard image={character.image}/>
+          return <CharacterLocationCard
+          id={character.id}
+          key={character.id}
+          name={character.name}
+          image={character.image}/>
         })
       )
     }
