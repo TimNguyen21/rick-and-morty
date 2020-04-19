@@ -22,10 +22,11 @@ class FavoritesContainer extends Component {
   }
 
   // checkFavorite = () => {
-  //   if (this.props.favorites) {
+  //   const checkFavorites = this.props.favorites;
+  //   if (!checkFavorites) {
   //     return (<h1>no favorites</h1>)
   //   } else {
-  //     this.createFavoritesList()
+  //     this.createFavoritesList();
   //   }
   // }
 

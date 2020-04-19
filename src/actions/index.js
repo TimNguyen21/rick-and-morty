@@ -22,3 +22,8 @@ export const updateQuery = (characters) => ({
   type: "UPDATE_QUERY",
   characters
 })
+
+export const updateLocationResidents = (charactersId) => ({
+  type: "UPDATE_LOCATION_RESIDENTS",
+  charactersId
+})
