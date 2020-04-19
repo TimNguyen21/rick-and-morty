@@ -12,8 +12,10 @@ class CharacterLocationContainer extends Component {
     } else {
       const currentCharacterId = this.props.currentCharacter.id;
       const characterLocation = this.props.currentCharacter.location.name;
-      const filterCharactersMatchingLocations = this.props.charactersInfo.filter(character => character.location.name === characterLocation)
-      const removedCurrentCharacterQuery = filterCharactersMatchingLocations.filter(character => character.id !== currentCharacterId)
+      const filterCharactersMatchingLocations = this.props.charactersInfo
+        .filter(character => character.location.name === characterLocation)
+      const removedCurrentCharacterQuery = filterCharactersMatchingLocations
+        .filter(character => character.id !== currentCharacterId)
 
       return(
         removedCurrentCharacterQuery.map(character => {

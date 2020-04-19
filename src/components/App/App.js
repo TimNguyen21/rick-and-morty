@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   characterListings = () => {
-    let characterCount = [...Array(21).keys()].slice(1);
+    let characterCount = [...Array(31).keys()].slice(1);
     let characterList = []
 
     characterCount.forEach(character => {

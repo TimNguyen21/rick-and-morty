@@ -19,20 +19,23 @@ class Query extends Component {
 
   findCharacters = () => {
     const searchWord = this.state.searchWord.toLowerCase()
-    const characterQueryResults = this.props.charactersList.filter(character => character.name.toLowerCase().includes(searchWord))
+    const characterQueryResults = this.props.charactersList
+      .filter(character => character.name.toLowerCase().includes(searchWord))
     this.props.updateQuery(characterQueryResults)
     this.setState({searchWord: ''})
   }
 
   filterStatus = () => {
     const currentState = this.state.status.toLowerCase()
-    const filterStatus = this.props.charactersList.filter(character => character.status.toLowerCase() === currentState)
+    const filterStatus = this.props.charactersList
+      .filter(character => character.status.toLowerCase() === currentState)
     this.defaultState(filterStatus)
   }
 
   filterSpecies = () => {
     const currentState = this.state.species.toLowerCase()
-    const filterStatus = this.props.charactersList.filter(character => character.species.toLowerCase() === currentState)
+    const filterStatus = this.props.charactersList
+      .filter(character => character.species.toLowerCase() === currentState)
     this.defaultState(filterStatus)
   }
 
