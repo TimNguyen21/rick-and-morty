@@ -19,21 +19,27 @@ class CharacterDetails extends Component {
   }
 
   nameCheck = (type) => {
-    if(type === undefined) {
-      return ''
-    } else {
-      return type["name"]
-    }
+    return type === undefined ? "" : type["name"]
   }
 
   addFavorite = () => {
     const characterID = this.props.currentCharacterInfo.id
     const favoriteCheck = this.props.favorites.find(character => character.id === characterID);
-    if(!favoriteCheck) {
-      this.props.addToFavorites(characterID)
-    } else {
-      console.log("saved already")
-    }
+    this.props.addToFavorites(characterID)
+  }
+
+  toggleFavoriteButton = () => {
+    const characterID = this.props.currentCharacterInfo.id
+    const favoriteCheck = this.props.favorites.find(character => character.id === characterID);
+
+    return !favoriteCheck ? false : true
+  }
+
+  toggleFavoriteButtonStatus = () => {
+    const characterID = this.props.currentCharacterInfo.id
+    const favoriteCheck = this.props.favorites.find(character => character.id === characterID);
+
+    return !favoriteCheck ? "Add to Favorites" : "Already Favorited!"
   }
 
   render() {
@@ -54,7 +60,7 @@ class CharacterDetails extends Component {
               <div>Origin: {this.nameCheck(origin)}</div>
               <div>Location: {this.nameCheck(location)}</div>
             </section>
-            <button onClick={this.addFavorite}>Add to Favorite</button>
+            <button onClick={this.addFavorite} disabled={this.toggleFavoriteButton()}>{this.toggleFavoriteButtonStatus()}</button>
           </section>
         </section>
         <section>
