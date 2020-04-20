@@ -19,8 +19,8 @@ This is a solo project completed during Mod 3 at Turing School of Software and D
 ![Using Search and Filter](https://media.giphy.com/media/j3tGZ3MpCHaqbZdInC/giphy.gif)
 
 #### Technologies Used
-Development: Redux, React.js, Scss/Sass
-Testing: Jest, React Testing Library
+- Development: Redux, React.js, Scss/Sass
+- Testing: Jest, React Testing Library
 
 #### Wireframe
 The wireframe for this project can be viewed on [Figma](https://www.figma.com/file/t0i74WSoa89O2kYeubiJsU/Rick-and-Morty?node-id=0%3A1).
