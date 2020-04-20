@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 import { rootReducer } from '../../reducers/index';
 
 describe('CharactersContainer', () => {
-  it('should display CharactersContainer components', () => {
+  it('should display CharactersContainer no results components', () => {
     const testStore = createStore(rootReducer);
     const testWrapper = <Provider store={testStore}><CharactersContainer /></Provider>;
     const { getByText, getByRole } = render(testWrapper);
