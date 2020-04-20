@@ -46,7 +46,7 @@ class CharacterDetails extends Component {
     const { name, status, species, gender, origin, location, image } = this.props.currentCharacterInfo;
 
     return (
-      <section>
+      <section className="character-main">
         <section className="character-details">
           <section>
             <img src={image} alt={"image of " + name}/>
@@ -54,17 +54,17 @@ class CharacterDetails extends Component {
           <section>
             <h1>{name}</h1>
             <section>
-              <div>Status: {status}</div>
-              <div>Species: {species}</div>
-              <div>Gender: {gender}</div>
-              <div>Origin: {this.nameCheck(origin)}</div>
-              <div>Location: {this.nameCheck(location)}</div>
+              <div>Status: <span>{status}</span></div>
+              <div>Species: <span>{species}</span></div>
+              <div>Gender: <span>{gender}</span></div>
+              <div>Origin: <span>{this.nameCheck(origin)}</span></div>
+              <div>Location: <span>{this.nameCheck(location)}</span></div>
             </section>
             <button onClick={this.addFavorite} disabled={this.toggleFavoriteButton()}>{this.toggleFavoriteButtonStatus()}</button>
           </section>
         </section>
-        <section>
-          <h2>Characters from the: "{this.nameCheck(location)}"</h2>
+        <section className="location-container">
+          <h2>More Characters From The: "{this.nameCheck(location)}"</h2>
           <div><CharacterLocationContainer /></div>
         </section>
       </section>
