@@ -51,7 +51,7 @@ class Query extends Component {
   searchSection = () => {
     return(
       <section className="search-section">
-        <label for="search-characters">Search Character:</label>
+        <label htmlFor="search-characters">Search Character:</label>
         <input
           name='searchWord'
           placeholder='Enter Character Name'
@@ -66,7 +66,7 @@ class Query extends Component {
   filterStatusSection = () => {
     return(
       <section className="filter-status">
-        <label for="filter-status">Filter Status:</label>
+        <label htmlFor="filter-status">Filter Status:</label>
         <select name="status" value={this.state.status} onChange={this.updateState} required>
           <option value="0">--Select a Status--</option>
           <option value="alive">"Alive"</option>
@@ -81,7 +81,7 @@ class Query extends Component {
   filterSpeciesSection = () => {
     return(
       <section className="filter-species">
-        <label for="filter-species">Filter Species:</label>
+        <label htmlFor="filter-species">Filter Species:</label>
         <select name="species" value={this.state.species} onChange={this.updateState} required>
           <option value="0">--Select a Species--</option>
           <option value="Alien">"Alien"</option>

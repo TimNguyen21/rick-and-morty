@@ -7,7 +7,7 @@ class FavoritesContainer extends Component {
 
   createFavoritesList = () => {
     const checkFavorites = this.props.favorites;
-    
+
     return checkFavorites.length === 0 ? (<h1>There are no favorites!</h1>) : this.favoritesList()
   }
 

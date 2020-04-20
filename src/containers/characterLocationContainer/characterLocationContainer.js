@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CharacterLocationCard from '../../components/CharacterLocationCard/CharacterLocationCard'
 import { connect } from 'react-redux';
 import './characterLocationContainer.scss'
-import { updateLocationResidents } from '../../actions'
 
 class CharacterLocationContainer extends Component {
 
@@ -44,8 +43,4 @@ const mapStateToProps = (state) => ({
   currentLocationResidents: state.currentLocationResidents
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  updateLocationResidents: charactersId => dispatch( updateLocationResidents(charactersId) )
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterLocationContainer);
+export default connect(mapStateToProps, null)(CharacterLocationContainer);
