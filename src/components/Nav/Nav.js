@@ -14,6 +14,7 @@ class Nav extends Component {
   render() {
     return(
       <section className="nav-section">
+        <img src="https://nothingbutgeek.com/wp-content/uploads/2017/06/RAM_LOGO_FINAL.jpg" alt="rick and morty logo"/>
         <Link to={`/`}>
           <button onClick={this.resetQuery}>Home</button>
         </Link>

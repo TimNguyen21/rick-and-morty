@@ -1,4 +1,12 @@
 .favorites-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  background-color: black;
+  height: 42.9em;
+  overflow-y: auto;
+  text-align: center;
+  border-top: 1px solid teal;
+  h1 {
+    color: yellow;
+  }
 }

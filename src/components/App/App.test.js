@@ -19,14 +19,6 @@ describe('App', () => {
     </Provider>;
   })
 
-  it('should display App title', () => {
-    const { getByText } = render(testWrapper);
-
-    const titleLabel = getByText("The Rick and Morty Database")
-
-    expect(titleLabel).toBeInTheDocument();
-  })
-
   it('should display characters', async () => {
     const { getByText } = render(testWrapper);
 

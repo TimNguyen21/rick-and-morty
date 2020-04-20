@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+}
+
+.bad-route-page {
+  text-align: center;
+  border-top: 1px solid teal;
+  h1 {
+    color: #edbf47;
+  }
+  button {
+    margin: 0.5em;
+    height: 2em;
+    width: 10em;
+    border-radius: 1em;
+    border: 0.1em solid #e0ab22;
+    background-color: teal;
+    color: #edbf47;
+    font-size: 1.1em;
+    font-weight: 900;
+    font-family: 'Indie Flower', cursive;
+  }
+}

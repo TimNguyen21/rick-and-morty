@@ -17,7 +17,7 @@ describe('BadRoute', () => {
     </Provider>;
     const { getByText, getByRole } = render(testWrapper);
 
-    const wrongPageMessage = getByText("Looks Like You Are In The Wrong Neighborhood Yoo")
+    const wrongPageMessage = getByText("Looks Like You Are Lost!")
     const homeButton = getByRole("button", {name: "Go To Home Page"})
 
     expect(wrongPageMessage).toBeInTheDocument();

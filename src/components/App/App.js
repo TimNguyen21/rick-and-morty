@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   characterListings = () => {
-    let characterCount = [...Array(40).keys()].slice(1);
+    let characterCount = [...Array(400).keys()].slice(1);
     let characterList = []
 
     characterCount.forEach(character => {
@@ -36,7 +36,6 @@ class App extends Component {
   render() {
     return(
       <main>
-        <header>The Rick and Morty Database</header>
         <Nav />
         <Switch>
           <Route

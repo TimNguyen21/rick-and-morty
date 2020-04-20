@@ -44,11 +44,11 @@ describe('CharacterDetails', () => {
     const { getByText } = render(testWrapper);
 
     const characterName = await waitForElement(() => getByText("Rick Sanchez"))
-    const characterStatus = await waitForElement(() => getByText("Status: Alive"))
-    const characterSpecies = await waitForElement(() => getByText("Species: Human"))
-    const characterGender = await waitForElement(() => getByText("Gender: Male"))
-    const characterOrigin = await waitForElement(() => getByText("Origin: Earth (C-137)"))
-    const characterLocation = await waitForElement(() => getByText("Location: Earth (Replacement Dimension)"))
+    const characterStatus = await waitForElement(() => getByText("Alive"))
+    const characterSpecies = await waitForElement(() => getByText("Human"))
+    const characterGender = await waitForElement(() => getByText("Male"))
+    const characterOrigin = await waitForElement(() => getByText("Earth (C-137)"))
+    const characterLocation = await waitForElement(() => getByText("Earth (Replacement Dimension)"))
 
     expect(characterName).toBeInTheDocument();
     expect(characterStatus).toBeInTheDocument();
