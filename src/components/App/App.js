@@ -36,7 +36,6 @@ class App extends Component {
   render() {
     return(
       <main>
-        <header>The Rick and Morty Database</header>
         <Nav />
         <Switch>
           <Route

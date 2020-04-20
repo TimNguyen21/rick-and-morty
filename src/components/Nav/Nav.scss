@@ -1,10 +1,26 @@
 .nav-section {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
-  height: 4em;
+  background-color: black;
+  border-bottom: 0.1em solid teal;
+  height: 7em;
+  img{
+    height: 100%;
+    width: 25em;
+  }
   button {
-    height: 2em;
+    margin: 0em 2em;
+    height: 3em;
+    width: 10em;
+    border-radius: 1em;
+    border: 0.1em solid #e0ab22;
+    background-color: teal;
+    color: #edbf47;
+    font-size: 1em;
+    font-weight: 900;
+    font-family: 'Indie Flower', cursive;
+    &:hover {
+      background-color: #22b58b;
+    }
   }
 }
