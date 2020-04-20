@@ -6,13 +6,20 @@
 
 .main-page {
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 1fr 4fr;
+  border: 1px solid teal;
   section:first-child {
-    border: 1px solid black;
+    border-bottom: 1px solid #e0ab22;
+    background-color: teal;
   }
   section:nth-child(2) {
     h1 {
       text-align: center;
     }
   }
+}
+
+.characters-section {
+  border: 1px solid teal;
+
 }

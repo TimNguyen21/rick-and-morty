@@ -47,7 +47,7 @@ class CharactersContainer extends Component {
         <section>
           <Query />
         </section>
-        <section>
+        <section className="characters-section">
         <h1>Characters</h1>
           <section className='characters-container'>
           {this.createCharactersList()}

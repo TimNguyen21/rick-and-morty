@@ -9,8 +9,8 @@ class Query extends Component {
     super();
     this.state = {
       searchWord: '',
-      status: 0,
-      species: 0
+      status: "default",
+      species: "default"
     }
   }
 
@@ -46,7 +46,7 @@ class Query extends Component {
 
   defaultState = (filterStatus) => {
     this.props.updateQuery(filterStatus)
-    this.setState({status: 0, species: 0})
+    this.setState({status: "default", species: "default"})
   }
 
   searchSection = () => {
@@ -69,12 +69,12 @@ class Query extends Component {
       <section className="filter-status">
         <label htmlFor="filter-status">Filter Status:</label>
         <select name="status" value={this.state.status} onChange={this.updateState} required>
-          <option value="0">--Select a Status--</option>
+          <option value="default">--Select a Status--</option>
           <option value="alive">"Alive"</option>
           <option value="dead">"Dead"</option>
           <option value="unknown">"Unknown"</option>
         </select>
-        <button className="filter-status-button" type="submit" onClick={this.filterStatus} disabled={this.state.status === 0}>Filter Status</button>
+        <button className="filter-status-button" type="submit" onClick={this.filterStatus} disabled={this.state.status === "default"}>Filter Status</button>
       </section>
     )
   }
@@ -84,7 +84,7 @@ class Query extends Component {
       <section className="filter-species">
         <label htmlFor="filter-species">Filter Species:</label>
         <select name="species" value={this.state.species} onChange={this.updateState} required>
-          <option value="0">--Select a Species--</option>
+          <option value="default">--Select a Species--</option>
           <option value="Alien">"Alien"</option>
           <option value="Animal">"Animal"</option>
           <option value="Cronenberg">"Cronenberg"</option>
@@ -98,7 +98,7 @@ class Query extends Component {
           <option value="Vampire">"Vampire"</option>
           <option value="Unknown">"Unknown"</option>
         </select>
-        <button className="filter-species-button" type="submit" onClick={this.filterSpecies} disabled={this.state.species === 0}>Filter Species</button>
+        <button className="filter-species-button" type="submit" onClick={this.filterSpecies} disabled={this.state.species === "default"}>Filter Species</button>
       </section>
     )
   }

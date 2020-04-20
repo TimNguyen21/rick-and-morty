@@ -4,5 +4,41 @@
     flex-direction: column;
     align-items: center;
     padding: 1em;
+    background-color: teal;
+    label {
+      font-size: 1.6em;
+      font-weight: 800;
+      color: #edbf47;
+    }
+    input {
+      width: 15em;
+      height: 2em;
+      text-align: center;
+      font-family: 'Indie Flower', cursive;
+      font-size: 1em;
+    }
+    button {
+      margin: 1em;
+      height: 3em;
+      width: 10em;
+      border-radius: 1em;
+      border: 0.1em solid #e0ab22;
+      background-color: #05a37e;
+      color: #edbf47;
+      font-size: 1em;
+      font-weight: 900;
+      font-family: 'Indie Flower', cursive;
+      &:disabled {
+        background-color: grey;
+      }
+    }
+  }
+  section:first-child {
+    height: 8em;
+    justify-content: center;
+  }
+  section:nth-child(2), section:nth-child(3) {
+    height: 6em;
+    justify-content: space-around;
   }
 }
