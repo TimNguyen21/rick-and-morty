@@ -110,7 +110,7 @@ class Query extends Component {
         {this.filterStatusSection()}
         {this.filterSpeciesSection()}
         <section>
-          <button onClick={this.resetQuery}>Reset Results</button>
+          <button className="reset-button" onClick={this.resetQuery}>Reset Results</button>
         </section>
       </section>
     )

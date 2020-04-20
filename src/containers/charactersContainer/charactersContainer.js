@@ -21,8 +21,8 @@ class CharactersContainer extends Component {
 
   noResultsMessage = () => {
     return (
-      <section>
-        <h1>There are no results</h1>
+      <section className="no-results">
+        <h2>There are no results</h2>
         <button onClick={this.resetSearch}>Reset Search</button>
       </section>
     )

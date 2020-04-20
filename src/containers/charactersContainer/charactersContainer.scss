@@ -26,6 +26,33 @@
   }
 }
 
+.no-results {
+  height: 10em;
+  width: 15em;
+  border: 2px solid #e0ab22;
+  border-radius: 1em;
+  text-align: center;
+  h2 {
+    font-size: 1.5em;
+    color: #edbf47;
+  }
+  button {
+    margin: 0em 2em;
+    height: 3em;
+    width: 10em;
+    border-radius: 1em;
+    border: 0.1em solid #e0ab22;
+    background-color: teal;
+    color: #edbf47;
+    font-size: 1em;
+    font-weight: 900;
+    font-family: 'Indie Flower', cursive;
+    &:hover {
+      background-color: #22b58b;
+    }
+  }
+}
+
 .characters-section {
   border-bottom: 1px solid teal;
 }
