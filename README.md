@@ -8,7 +8,9 @@ This is a solo project completed during Mod 3 at Turing School of Software and D
 [Tim Nguyen](https://github.com/TimNguyen21)
 
 #### Screenshots
-![img](url)
+![Homepage](https://user-images.githubusercontent.com/52939140/79808915-6c7aac80-832c-11ea-80a9-0e298e3bcae4.png)
+![Character Details Page](https://user-images.githubusercontent.com/52939140/79808924-74d2e780-832c-11ea-91a8-bc8878b8ff13.png)
+![Favorites Page](https://user-images.githubusercontent.com/52939140/79808940-7c928c00-832c-11ea-97ce-9323bb0411c4.png)
 
 #### In Action
 ![Gif of app](url)
