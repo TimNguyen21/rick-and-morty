@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { setCurrentCharactersInfo, addFavorite } from '../../actions';
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
 import CharacterLocationContainer from '../../containers/characterLocationContainer/characterLocationContainer'
+import PropTypes from 'prop-types';
 
 class CharacterDetails extends Component {
 
@@ -69,6 +70,21 @@ class CharacterDetails extends Component {
       </section>
     )
   }
+}
+
+CharacterDetails.propTypes = {
+  setCharactersInfo: PropTypes.func,
+  addToFavorites: PropTypes.func,
+  charactersInfo: PropTypes.array,
+  currentCharacterInfo: PropTypes.object,
+  favorites: PropTypes.array,
+  name: PropTypes.string,
+  status: PropTypes.string,
+  species: PropTypes.string,
+  gender: PropTypes.string,
+  origin: PropTypes.object,
+  location: PropTypes.object,
+  image: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({

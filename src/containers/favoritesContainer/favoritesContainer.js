@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import FavoriteCard from '../../components/FavoriteCard/FavoriteCard'
 import { connect } from 'react-redux';
-import './favoritesContainer.scss'
+import './favoritesContainer.scss';
+import PropTypes from 'prop-types';
 
 class FavoritesContainer extends Component {
 
@@ -33,6 +34,11 @@ class FavoritesContainer extends Component {
       </section>
     )
   }
+}
+
+FavoritesContainer.propTypes = {
+  charactersInfo: PropTypes.array,
+  favorites: PropTypes.array,
 }
 
 const mapStateToProps = (state) => ({

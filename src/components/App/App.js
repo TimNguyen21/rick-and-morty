@@ -9,6 +9,7 @@ import FavoritesContainer from '../../containers/favoritesContainer/favoritesCon
 import CharacterDetails from '../CharacterDetails/CharacterDetails'
 import BadRoute from '../404Page/404Page'
 import { getCharacterInfo } from '../../apiCalls/apiCalls'
+import PropTypes from 'prop-types';
 
 class App extends Component {
 
@@ -67,6 +68,11 @@ class App extends Component {
       </main>
     )
   }
+}
+
+App.propTypes = {
+  getCharactersInfo: PropTypes.func,
+  updateQuery: PropTypes.func,
 }
 
 const mapDispatchToProps = (dispatch) => ({

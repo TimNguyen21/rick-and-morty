@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CharacterLocationCard from '../../components/CharacterLocationCard/CharacterLocationCard'
 import { connect } from 'react-redux';
-import './characterLocationContainer.scss'
+import './characterLocationContainer.scss';
+import PropTypes from 'prop-types';
 
 class CharacterLocationContainer extends Component {
 
@@ -37,10 +38,14 @@ class CharacterLocationContainer extends Component {
   }
 }
 
+CharacterLocationContainer.propTypes = {
+  charactersInfo: PropTypes.array,
+  currentCharacter: PropTypes.object,
+}
+
 const mapStateToProps = (state) => ({
   charactersInfo: state.charactersInfo,
   currentCharacter: state.currentCharacter,
-  currentLocationResidents: state.currentLocationResidents
 })
 
 export default connect(mapStateToProps, null)(CharacterLocationContainer);

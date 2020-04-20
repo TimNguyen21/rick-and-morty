@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Query.scss'
 import { connect } from 'react-redux';
-import { updateQuery } from '../../actions'
+import { updateQuery } from '../../actions';
+import PropTypes from 'prop-types';
 
 class Query extends Component {
   constructor() {
@@ -114,6 +115,11 @@ class Query extends Component {
       </section>
     )
   }
+}
+
+Query.propTypes = {
+  updateQuery: PropTypes.func,
+  charactersList: PropTypes.array,
 }
 
 const mapStateToProps = (state) => ({

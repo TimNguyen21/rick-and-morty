@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import CharacterCard from '../../components/CharacterCard/CharacterCard'
-import Query from '../../components/Query/Query'
+import CharacterCard from '../../components/CharacterCard/CharacterCard';
+import Query from '../../components/Query/Query';
 import { connect } from 'react-redux';
-import './charactersContainer.scss'
-import { updateQuery } from '../../actions'
+import './charactersContainer.scss';
+import { updateQuery } from '../../actions';
+import PropTypes from 'prop-types';
+
 
 class CharactersContainer extends Component {
 
@@ -54,6 +56,12 @@ class CharactersContainer extends Component {
       </section>
     )
   }
+}
+
+CharactersContainer.propTypes = {
+  charactersList: PropTypes.array,
+  currentQuery: PropTypes.array,
+  updateQuery: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({

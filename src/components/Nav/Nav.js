@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateQuery } from '../../actions'
 import "./Nav.scss";
+import PropTypes from 'prop-types';
 
 class Nav extends Component {
 
@@ -22,6 +23,11 @@ class Nav extends Component {
       </section>
     )
   }
+}
+
+Nav.propTypes = {
+  updateQuery: PropTypes.func,
+  charactersList: PropTypes.array,
 }
 
 const mapStateToProps = (state) => ({
