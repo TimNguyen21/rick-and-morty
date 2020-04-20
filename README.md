@@ -13,7 +13,7 @@ This is a solo project completed during Mod 3 at Turing School of Software and D
 ![Favorites Page](https://user-images.githubusercontent.com/52939140/79808940-7c928c00-832c-11ea-97ce-9323bb0411c4.png)
 
 #### In Action
-![Gif of app](url)
+![Using Search and Filter](https://media.giphy.com/media/j3tGZ3MpCHaqbZdInC/giphy.gif)
 
 #### Technologies Used
 Development: Redux, React.js, Scss/Sass
