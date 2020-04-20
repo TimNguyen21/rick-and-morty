@@ -21,7 +21,7 @@ Testing: Jest, React Testing Library
 The wireframe for this project can be viewed on [Figma](https://www.figma.com/file/t0i74WSoa89O2kYeubiJsU/Rick-and-Morty?node-id=0%3A1).
 
 #### Project Next Steps
-We would like to...
+I would like to...
 
 #### Setup
 Fork and clone down this repo.
