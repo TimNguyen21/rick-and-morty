@@ -114,17 +114,4 @@ describe("action creators", () => {
     expect(result).toEqual(expectedAction)
   })
 
-  // it("should have a type of UPDATE_LOCATION_RESIDENTS", () => {
-  //   const expectedAction = {
-  //     type: "UPDATE_LOCATION_RESIDENTS",
-  //     charactersId: 1
-  //   };
-  //
-  //   const result1 = actions.updateLocationResidents(1);
-  //   const result2 = actions.updateLocationResidents(2);
-  //
-  //   expect(result1).toEqual(expectedAction)
-  //   expect(result2).not.toEqual(expectedAction)
-  // })
-
 })
