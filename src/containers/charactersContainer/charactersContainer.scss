@@ -2,12 +2,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
+  border: 1px solid teal;
+  overflow-y: scroll;
+  height: 38.3em;
 }
 
 .main-page {
   display: grid;
   grid-template-columns: 1fr 4fr;
   border: 1px solid teal;
+  background-color: black;
   section:first-child {
     border-bottom: 1px solid #e0ab22;
     background-color: teal;
@@ -15,11 +19,26 @@
   section:nth-child(2) {
     h1 {
       text-align: center;
+      color: #edbf47;
+      font-size: 3em;
+      font-weight: 800;
+      margin: -0.8px;
     }
   }
 }
 
 .characters-section {
-  border: 1px solid teal;
+  border-bottom: 1px solid teal;
+}
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+::-webkit-scrollbar-track {
+  background: teal;
 }

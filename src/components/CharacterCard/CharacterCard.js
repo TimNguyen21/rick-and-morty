@@ -8,7 +8,7 @@ const CharacterCard = ({ id, img, name }) => {
     <article className='character-card'>
       <Link to={`/character/${id}`}>
         <img src={img} alt={"image of " + name}/>
-        <div>{name}</div>
+        <label htmlFor="charcter-name">{name}</label>
       </Link>
     </article>
   )
