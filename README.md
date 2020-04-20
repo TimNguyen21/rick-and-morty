@@ -26,6 +26,6 @@ The wireframe for this project can be viewed on [Figma](https://www.figma.com/fi
 For future iterations, I would like to add more design to the application where it is more geared to the targeted audience.  Also, I would like to implement a local storage feature to store favorite characters list and it is still accessible after page reload.
 
 #### Setup
-Fork and clone down this repo.
-Once you have cloned the repo, change into the directory.
-To view the application, run npm and open the provided localhost url in the browser.
+- `Fork and clone down this repo.`
+- `Once you have cloned the repo, change into the directory.`
+- `To view the application, run npm and open the provided localhost url in the browser.`
