@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './FavoriteCard.scss';
 import { Link } from 'react-router-dom';
 import { removeFavorite } from '../../actions';
+import PropTypes from 'prop-types';
 
 class FavoriteCard extends Component {
 
@@ -29,6 +30,15 @@ class FavoriteCard extends Component {
       </article>
     )
   }
+}
+
+FavoriteCard.propTypes = {
+  removeFavoriteCharacter: PropTypes.func,
+  charactersInfo: PropTypes.array,
+  favorites: PropTypes.array,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({

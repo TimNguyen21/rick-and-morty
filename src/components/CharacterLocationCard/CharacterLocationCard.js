@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './CharacterLocationCard.scss'
 import { connect } from 'react-redux';
 import { setCurrentCharactersInfo} from '../../actions';
+import PropTypes from 'prop-types';
 
 class CharacterLocationCard extends Component {
 
@@ -22,6 +23,14 @@ class CharacterLocationCard extends Component {
       </article>
     )
   }
+}
+
+CharacterLocationCard.propTypes = {
+  setCharactersInfo: PropTypes.func,
+  charactersInfo: PropTypes.array,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({
