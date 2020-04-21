@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getCharactersInfo, updateQuery } from '../../actions'
 import './App.scss';
-import {Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Nav from '../Nav/Nav'
 import CharactersContainer from '../../containers/charactersContainer/charactersContainer'
 import FavoritesContainer from '../../containers/favoritesContainer/favoritesContainer'
@@ -53,8 +53,14 @@ class App extends Component {
           )}
           />
           <Route
-            exact
             path='/rick-and-morty'
+            render={() => (
+              <CharactersContainer />
+            )}
+          />
+          <Route
+            exact
+            path='/'
             render={() => (
               <CharactersContainer />
             )}
