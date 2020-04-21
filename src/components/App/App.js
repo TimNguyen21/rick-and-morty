@@ -54,7 +54,7 @@ class App extends Component {
           />
           <Route
             exact
-            path='/'
+            path='/rick-and-morty'
             render={() => (
               <CharactersContainer />
             )}
