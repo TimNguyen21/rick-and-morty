@@ -4,8 +4,10 @@
 This is a solo project completed during Mod 3 at Turing School of Software and Design.  The purpose of this project is to create database that holds information of characters from the show "Rick and Morty". The primary audience for this application is for teenagers and young adults that are fans of the show.  The application allows the users to see all of the characters that are in the show, view details of the character, and add characters to a favorites list.
 
 #### Developer
-
 [Tim Nguyen](https://github.com/TimNguyen21)
+
+#### Deployment
+[Rick and Morty Database Webpage](https://timnguyen21.github.io/rick-and-morty)
 
 #### Screenshots
 ##### Home Page
@@ -27,9 +29,6 @@ The wireframe for this project can be viewed on [Figma](https://www.figma.com/fi
 
 #### Project Next Steps
 For future iterations, I would like to add more design to the application where it is more geared to the targeted audience.  Also, I would like to implement a local storage feature to store favorite characters list and it is still accessible after page reload.
-
-#### Deployment
-[Rick and Morty Database Webpage](https://timnguyen21.github.io/rick-and-morty)
 
 #### Setup
 - `Fork and clone down this repo.`
