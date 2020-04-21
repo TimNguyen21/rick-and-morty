@@ -28,6 +28,9 @@ The wireframe for this project can be viewed on [Figma](https://www.figma.com/fi
 #### Project Next Steps
 For future iterations, I would like to add more design to the application where it is more geared to the targeted audience.  Also, I would like to implement a local storage feature to store favorite characters list and it is still accessible after page reload.
 
+#### Deployment
+[Rick and Morty Database Webpage](https://timnguyen21.github.io/rick-and-morty)
+
 #### Setup
 - `Fork and clone down this repo.`
 - `Once you have cloned the repo, change into the directory.`
