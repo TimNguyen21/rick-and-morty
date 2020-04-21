@@ -1,4 +1,4 @@
-### Rick and Morty Database
+## Rick and Morty Database
 
 #### Abstract
 This is a solo project completed during Mod 3 at Turing School of Software and Design.  The purpose of this project is to create database that holds information of characters from the show "Rick and Morty". The primary audience for this application is for teenagers and young adults that are fans of the show.  The application allows the users to see all of the characters that are in the show, view details of the character, and add characters to a favorites list.
@@ -19,8 +19,8 @@ This is a solo project completed during Mod 3 at Turing School of Software and D
 ![Using Search and Filter](https://media.giphy.com/media/j3tGZ3MpCHaqbZdInC/giphy.gif)
 
 #### Technologies Used
-Development: Redux, React.js, Scss/Sass
-Testing: Jest, React Testing Library
+- Development: Redux, React.js, Scss/Sass
+- Testing: Jest, React Testing Library
 
 #### Wireframe
 The wireframe for this project can be viewed on [Figma](https://www.figma.com/file/t0i74WSoa89O2kYeubiJsU/Rick-and-Morty?node-id=0%3A1).
