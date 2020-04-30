@@ -33,4 +33,5 @@ For future iterations, I would like to add more design to the application where 
 #### Setup
 - `Fork and clone down this repo.`
 - `Once you have cloned the repo, change into the directory.`
+- `npm install`
 - `To view the application, run npm and open the provided localhost url in the browser.`
