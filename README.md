@@ -1,13 +1,15 @@
 ## Rick and Morty Database
 
 #### Abstract
-This is a solo project completed during Mod 3 at Turing School of Software and Design.  The purpose of this project is to create database that holds information of characters from the show "Rick and Morty". The primary audience for this application is for teenagers and young adults that are fans of the show.  The application allows the users to see all of the characters that are in the show, view details of the character, and add characters to a favorites list.
+This is a solo project completed during Mod 3 at Turing School of Software and Design.  The purpose of this project is to create database that holds information of characters from the show "Rick and Morty" from the [Rick and Morty API](https://rickandmortyapi.com/). The primary audience for this application is for teenagers and young adults that are fans of the show.  The application allows the users to see all of the characters that are in the show, view details of the character, and add characters to a favorites list.
 
 #### Developer
 [Tim Nguyen](https://github.com/TimNguyen21)
 
 #### Deployment
 [Rick and Morty Database Webpage](https://timnguyen21.github.io/rick-and-morty)
+
+`note: May need to reload page to load all characters from the Rick and Morty API`
 
 #### Screenshots
 ##### Home Page
